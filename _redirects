@@ -1,0 +1,12 @@
+# Netlify Redirects File
+# https://docs.netlify.com/routing/redirects/
+
+# Redirect www to non-www (or vice versa - uncomment the one you prefer)
+# https://www.tuodominio.it/* https://tuodominio.it/:splat 301!
+
+# Force HTTPS
+# http://tuodominio.it/* https://tuodominio.it/:splat 301!
+# http://www.tuodominio.it/* https://www.tuodominio.it/:splat 301!
+
+# Custom 404 page (optional - create 404.html if needed)
+# /* /404.html 404
