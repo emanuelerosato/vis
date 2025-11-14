@@ -123,6 +123,19 @@ p {
     font-weight: 600;
     color: var(--primary-dark);
     letter-spacing: 0.5px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.logo-modern img {
+    height: 50px;
+    width: auto;
+    display: block;
+    transition: opacity var(--transition-fast);
+}
+
+.logo-modern img:hover {
+    opacity: 0.8;
 }
 
 .logo-modern span {
@@ -994,5 +1007,98 @@ p {
 
     .section-intro {
         margin-bottom: 2.5rem;
+    }
+}
+
+/* ==========================================
+   WEDDING AWARDS SECTION
+   ========================================== */
+.wedding-awards-section {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #f8f9fa, #ffffff);
+    text-align: center;
+}
+
+.wedding-awards-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.wedding-awards-grid img {
+    width: 125px;
+    height: 125px;
+    transition: transform var(--transition-base);
+}
+
+.wedding-awards-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* ==========================================
+   FOOTER LOGO & SOCIAL ENHANCEMENTS
+   ========================================== */
+.footer-brand img {
+    height: 60px;
+    width: auto;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.footer-modern img {
+    max-width: 100%;
+    height: auto;
+}
+
+.footer-modern .social-links-modern a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.footer-modern .social-links-modern a:hover {
+    color: var(--accent-gold);
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   RESPONSIVE - WEDDING AWARDS
+   ========================================== */
+@media (max-width: 768px) {
+    .wedding-awards-grid {
+        gap: 1.5rem;
+    }
+
+    .wedding-awards-grid img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .wedding-awards-section {
+        padding: 3rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .wedding-awards-grid {
+        gap: 1rem;
+    }
+
+    .wedding-awards-grid img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .footer-brand img {
+        height: 50px;
+    }
+
+    .logo-modern img {
+        height: 40px;
     }
 }
