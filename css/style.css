@@ -88,10 +88,24 @@ p {
 .text-center { text-align: center; }
 .container-narrow { max-width: 900px; margin: 0 auto; padding: 0 20px; }
 
+/* Container generico per retrocompatibilità */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.container-modern {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
 /* ==========================================
-   MODERN NAVIGATION
+   MODERN NAVIGATION (con supporto retrocompatibilità)
    ========================================== */
-.navbar-modern {
+.navbar-modern,
+.navbar {
     position: fixed;
     top: 0;
     left: 0;
@@ -104,11 +118,13 @@ p {
     transition: var(--transition-base);
 }
 
-.navbar-modern.scrolled {
+.navbar-modern.scrolled,
+.navbar.scrolled {
     box-shadow: var(--shadow-md);
 }
 
-.nav-container {
+.nav-container,
+.navbar .container {
     max-width: 1400px;
     margin: 0 auto;
     padding: 1.25rem 2rem;
@@ -117,7 +133,8 @@ p {
     align-items: center;
 }
 
-.logo-modern {
+.logo-modern,
+.logo {
     font-family: var(--font-serif);
     font-size: 1.5rem;
     font-weight: 600;
@@ -127,39 +144,46 @@ p {
     text-decoration: none;
 }
 
-.logo-modern img {
+.logo-modern img,
+.logo img {
     height: 50px;
     width: auto;
     display: block;
     transition: opacity var(--transition-fast);
 }
 
-.logo-modern img:hover {
+.logo-modern img:hover,
+.logo img:hover {
     opacity: 0.8;
 }
 
-.logo-modern span {
+.logo-modern span,
+.logo span {
     font-weight: 400;
     color: var(--accent-gold);
 }
 
-.nav-links {
+.nav-links,
+.nav-menu {
     display: flex;
     list-style: none;
     gap: 2.5rem;
     align-items: center;
 }
 
-.nav-links a {
+.nav-links a,
+.nav-menu a {
     font-size: 0.95rem;
     font-weight: 500;
     letter-spacing: 0.5px;
     color: var(--text-dark);
     position: relative;
     padding-bottom: 2px;
+    text-decoration: none;
 }
 
-.nav-links a::after {
+.nav-links a::after,
+.nav-menu a::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -171,11 +195,14 @@ p {
 }
 
 .nav-links a:hover::after,
-.nav-links a.active::after {
+.nav-links a.active::after,
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
     width: 100%;
 }
 
-.nav-cta {
+.nav-cta,
+.cta-link {
     background: var(--accent-gold);
     color: var(--primary-light) !important;
     padding: 0.6rem 1.5rem !important;
@@ -183,16 +210,19 @@ p {
     font-weight: 600;
 }
 
-.nav-cta::after {
+.nav-cta::after,
+.cta-link::after {
     display: none !important;
 }
 
-.nav-cta:hover {
+.nav-cta:hover,
+.cta-link:hover {
     background: var(--accent-dark);
     transform: translateY(-1px);
 }
 
-.menu-toggle {
+.menu-toggle,
+.nav-toggle {
     display: none;
     flex-direction: column;
     gap: 5px;
@@ -202,7 +232,8 @@ p {
     padding: 0.5rem;
 }
 
-.menu-toggle span {
+.menu-toggle span,
+.nav-toggle span {
     width: 25px;
     height: 2px;
     background: var(--primary-dark);
@@ -840,9 +871,10 @@ p {
 }
 
 /* ==========================================
-   FOOTER MODERN
+   FOOTER MODERN (con supporto retrocompatibilità)
    ========================================== */
-.footer-modern {
+.footer-modern,
+.footer {
     background: var(--primary-dark);
     color: rgba(255, 255, 255, 0.8);
     padding: 4rem 0 2rem;
@@ -869,35 +901,41 @@ p {
     color: rgba(255, 255, 255, 0.6);
 }
 
-.footer-links-modern {
+.footer-links-modern,
+.footer-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 3rem;
     margin-bottom: 3rem;
 }
 
-.footer-col-modern h4 {
+.footer-col-modern h4,
+.footer-col h3 {
     color: var(--primary-light);
     font-size: 1.1rem;
     margin-bottom: 1rem;
     font-weight: 600;
 }
 
-.footer-col-modern ul {
+.footer-col-modern ul,
+.footer-col ul {
     list-style: none;
 }
 
-.footer-col-modern li {
+.footer-col-modern li,
+.footer-col li {
     margin-bottom: 0.75rem;
 }
 
-.footer-col-modern a {
+.footer-col-modern a,
+.footer-col a {
     color: rgba(255, 255, 255, 0.7);
     font-size: 0.95rem;
     transition: var(--transition-base);
 }
 
-.footer-col-modern a:hover {
+.footer-col-modern a:hover,
+.footer-col a:hover {
     color: var(--accent-gold);
 }
 
@@ -922,7 +960,8 @@ p {
     transform: translateY(-2px);
 }
 
-.footer-bottom-modern {
+.footer-bottom-modern,
+.footer-bottom {
     text-align: center;
     padding-top: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
