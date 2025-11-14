@@ -3,32 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Fotografo professionista a Grottaglie specializzato in matrimoni, eventi, ritratti e fotografia d'autore. Qualità, eleganza e professionalità per i tuoi momenti speciali.">
+    <meta name="description" content="Fotografo professionista a Grottaglie specializzato in matrimoni, eventi, ritratti. Portfolio fotografico di alta qualità per immortalare i tuoi momenti speciali.">
     <meta name="keywords" content="fotografo Grottaglie, fotografo matrimonio Grottaglie, fotografo eventi Grottaglie, fotografo professionista Taranto">
-    <meta name="author" content="Studio Fotografico Grottaglie">
 
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.tuodominio.it/">
-    <meta property="og:title" content="Fotografo Professionista a Grottaglie | Studio Fotografico">
-    <meta property="og:description" content="Fotografo professionista a Grottaglie specializzato in matrimoni, eventi, ritratti e fotografia d'autore.">
+    <meta property="og:title" content="Fotografo Professionista Grottaglie | Portfolio">
+    <meta property="og:description" content="Fotografie che raccontano emozioni. Matrimoni, eventi, ritratti d'autore.">
     <meta property="og:image" content="https://www.tuodominio.it/images/og-image.jpg">
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://www.tuodominio.it/">
-    <meta property="twitter:title" content="Fotografo Professionista a Grottaglie | Studio Fotografico">
-    <meta property="twitter:description" content="Fotografo professionista a Grottaglie specializzato in matrimoni, eventi, ritratti e fotografia d'autore.">
-    <meta property="twitter:image" content="https://www.tuodominio.it/images/og-image.jpg">
-
-    <!-- Schema.org LocalBusiness -->
+    <!-- Schema.org -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": ["LocalBusiness", "ProfessionalService", "Photographer"],
       "name": "Studio Fotografico Grottaglie",
       "image": "https://www.tuodominio.it/images/logo.jpg",
-      "description": "Fotografo professionista a Grottaglie specializzato in matrimoni, eventi, ritratti e fotografia d'autore.",
+      "description": "Fotografo professionista specializzato in matrimoni, eventi e ritratti a Grottaglie.",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Via Roma 123",
@@ -44,218 +36,452 @@
       },
       "telephone": "+39-099-1234567",
       "email": "info@studiofotografico.it",
-      "priceRange": "€€",
-      "openingHours": "Mo-Fr 09:00-18:00, Sa 09:00-13:00",
       "url": "https://www.tuodominio.it"
     }
     </script>
 
-    <title>Fotografo Professionista a Grottaglie | Studio Fotografico Premium</title>
+    <title>Fotografo Grottaglie | Portfolio Matrimoni, Eventi, Ritratti</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="canonical" href="https://www.tuodominio.it/">
 </head>
 <body>
+
     <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="container">
-            <a href="index.html" class="logo">Studio Fotografico</a>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+    <nav class="navbar-modern" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo-modern">Studio<span>Fotografico</span></a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-            <ul class="nav-menu" id="navMenu">
+            <ul class="nav-links" id="navLinks">
                 <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">Chi Sono</a></li>
-                <li><a href="services.html">Servizi</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="contact.html" class="cta-link">Contatti</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Servizi</a></li>
+                <li><a href="contact.html" class="nav-cta">Contatti</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="hero-title">Catturiamo l'Emozione dei Tuoi Momenti Speciali</h1>
-            <p class="hero-subtitle">Fotografo professionista a Grottaglie specializzato in matrimoni, eventi ed emozioni autentiche</p>
-            <a href="contact.html" class="btn btn-primary">Richiedi un Preventivo</a>
-            <a href="portfolio.html" class="btn btn-secondary">Scopri il Portfolio</a>
-        </div>
-        <div class="scroll-indicator">
-            <span>Scorri</span>
-        </div>
-    </header>
-
-    <!-- Services Preview Section -->
-    <section class="services-preview section">
-        <div class="container">
-            <div class="section-header">
-                <h2>I Nostri Servizi</h2>
-                <p>Professionalità ed eleganza per ogni occasione</p>
+    <!-- Hero Fullscreen con Slider -->
+    <section class="hero-fullscreen" id="heroSlider">
+        <div class="hero-slider">
+            <div class="hero-slide active" style="background-image: url('images/hero/hero-1.jpg')">
+                <div class="hero-overlay"></div>
             </div>
-            <div class="services-grid">
-                <article class="service-card">
+            <div class="hero-slide" style="background-image: url('images/hero/hero-2.jpg')">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-slide" style="background-image: url('images/hero/hero-3.jpg')">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-slide" style="background-image: url('images/hero/hero-4.jpg')">
+                <div class="hero-overlay"></div>
+            </div>
+        </div>
+
+        <div class="hero-content-center">
+            <h1 class="hero-title-modern" data-aos="fade-up">Emozioni che diventano Arte</h1>
+            <p class="hero-subtitle-modern" data-aos="fade-up" data-aos-delay="200">Fotografo professionista specializzato in matrimoni ed eventi a Grottaglie</p>
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400">
+                <a href="portfolio.html" class="btn-modern btn-primary-modern">Scopri il Portfolio</a>
+                <a href="contact.html" class="btn-modern btn-outline-modern">Contattami</a>
+            </div>
+        </div>
+
+        <!-- Slider Controls -->
+        <button class="slider-control prev" id="sliderPrev" aria-label="Precedente">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+        </button>
+        <button class="slider-control next" id="sliderNext" aria-label="Successivo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
+
+        <!-- Slider Indicators -->
+        <div class="slider-indicators">
+            <span class="indicator active" data-slide="0"></span>
+            <span class="indicator" data-slide="1"></span>
+            <span class="indicator" data-slide="2"></span>
+            <span class="indicator" data-slide="3"></span>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-down">
+            <span>Scroll</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="7 13 12 18 17 13"></polyline>
+                <polyline points="7 6 12 11 17 6"></polyline>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Portfolio Preview Grid -->
+    <section class="portfolio-preview-section">
+        <div class="section-intro" data-aos="fade-up">
+            <span class="section-label">Portfolio</span>
+            <h2 class="section-title-modern">Lavori Recenti</h2>
+            <p class="section-description">Una selezione dei miei ultimi progetti fotografici</p>
+        </div>
+
+        <div class="masonry-grid" id="masonryGrid">
+            <!-- Large Image -->
+            <div class="masonry-item large" data-category="matrimoni" data-aos="fade-up">
+                <img src="images/portfolio/wedding-1.jpg" alt="Matrimonio elegante Grottaglie" loading="lazy">
+                <div class="masonry-overlay">
+                    <div class="masonry-content">
+                        <span class="masonry-category">Matrimonio</span>
+                        <h3 class="masonry-title">Elena & Marco</h3>
+                        <p class="masonry-location">Grottaglie, 2024</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Medium Images -->
+            <div class="masonry-item medium" data-category="ritratti" data-aos="fade-up" data-aos-delay="100">
+                <img src="images/portfolio/portrait-1.jpg" alt="Ritratto famiglia professionale" loading="lazy">
+                <div class="masonry-overlay">
+                    <div class="masonry-content">
+                        <span class="masonry-category">Ritratto</span>
+                        <h3 class="masonry-title">Famiglia Rossi</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item medium" data-category="eventi" data-aos="fade-up" data-aos-delay="200">
+                <img src="images/portfolio/event-1.jpg" alt="Evento aziendale fotografo Grottaglie" loading="lazy">
+                <div class="masonry-overlay">
+                    <div class="masonry-content">
+                        <span class="masonry-category">Evento</span>
+                        <h3 class="masonry-title">Corporate Event</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tall Image -->
+            <div class="masonry-item tall" data-category="matrimoni" data-aos="fade-up" data-aos-delay="300">
+                <img src="images/portfolio/wedding-2.jpg" alt="Sposi location esterna Puglia" loading="lazy">
+                <div class="masonry-overlay">
+                    <div class="masonry-content">
+                        <span class="masonry-category">Matrimonio</span>
+                        <h3 class="masonry-title">Sara & Luca</h3>
+                        <p class="masonry-location">Martina Franca, 2024</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Regular Images -->
+            <div class="masonry-item" data-category="cerimonie" data-aos="fade-up" data-aos-delay="400">
+                <img src="images/portfolio/communion-1.jpg" alt="Prima comunione fotografo Grottaglie" loading="lazy">
+                <div class="masonry-overlay">
+                    <div class="masonry-content">
+                        <span class="masonry-category">Comunione</span>
+                        <h3 class="masonry-title">Prima Comunione</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item" data-category="ritratti" data-aos="fade-up" data-aos-delay="500">
+                <img src="images/portfolio/portrait-2.jpg" alt="Book fotografico professionale" loading="lazy">
+                <div class="masonry-overlay">
+                    <div class="masonry-content">
+                        <span class="masonry-category">Book</span>
+                        <h3 class="masonry-title">Fashion Portfolio</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wide Image -->
+            <div class="masonry-item wide" data-category="matrimoni" data-aos="fade-up" data-aos-delay="600">
+                <img src="images/portfolio/wedding-3.jpg" alt="Ricevimento matrimonio Grottaglie" loading="lazy">
+                <div class="masonry-overlay">
+                    <div class="masonry-content">
+                        <span class="masonry-category">Matrimonio</span>
+                        <h3 class="masonry-title">Giulia & Alessandro</h3>
+                        <p class="masonry-location">Ostuni, 2024</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item" data-category="eventi" data-aos="fade-up" data-aos-delay="700">
+                <img src="images/portfolio/event-2.jpg" alt="Festa 18 anni fotografo" loading="lazy">
+                <div class="masonry-overlay">
+                    <div class="masonry-content">
+                        <span class="masonry-category">Evento</span>
+                        <h3 class="masonry-title">18° Compleanno</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center" data-aos="fade-up">
+            <a href="portfolio.html" class="btn-modern btn-primary-modern">Vedi Tutto il Portfolio</a>
+        </div>
+    </section>
+
+    <!-- About Preview con Parallax -->
+    <section class="about-parallax" style="background-image: url('images/about-bg.jpg')">
+        <div class="parallax-overlay"></div>
+        <div class="parallax-content">
+            <div class="container-narrow">
+                <span class="section-label" data-aos="fade-up">Chi Sono</span>
+                <h2 class="section-title-modern light" data-aos="fade-up" data-aos-delay="100">
+                    Passione, Tecnica<br>ed Emozione
+                </h2>
+                <p class="parallax-text" data-aos="fade-up" data-aos-delay="200">
+                    Da oltre 10 anni trasformo momenti speciali in ricordi indimenticabili. Ogni scatto racconta una storia unica, catturando l'essenza autentica delle emozioni. Il mio approccio unisce tecnica professionale e sensibilità artistica.
+                </p>
+                <a href="about.html" class="btn-modern btn-outline-light" data-aos="fade-up" data-aos-delay="300">Scopri di Più</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Carousel -->
+    <section class="services-modern-section">
+        <div class="section-intro" data-aos="fade-up">
+            <span class="section-label">Servizi</span>
+            <h2 class="section-title-modern">Cosa Faccio</h2>
+        </div>
+
+        <div class="services-carousel">
+            <div class="service-card-modern" data-aos="fade-up">
+                <div class="service-image" style="background-image: url('images/services/matrimoni.jpg')">
                     <div class="service-icon">💍</div>
+                </div>
+                <div class="service-card-content">
                     <h3>Matrimoni</h3>
-                    <p>Immortaliamo il giorno più importante della tua vita con stile ed eleganza</p>
-                    <a href="services.html#matrimoni" class="service-link">Scopri di più →</a>
-                </article>
-                <article class="service-card">
+                    <p>Reportage emozionale del giorno più importante della tua vita</p>
+                    <a href="landing/fotografo-matrimonio-grottaglie.html" class="service-link">Scopri l'Offerta →</a>
+                </div>
+            </div>
+
+            <div class="service-card-modern" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-image" style="background-image: url('images/services/eventi.jpg')">
                     <div class="service-icon">🎉</div>
+                </div>
+                <div class="service-card-content">
                     <h3>Eventi</h3>
-                    <p>Fotografia professionale per eventi aziendali, feste e cerimonie</p>
-                    <a href="services.html#eventi" class="service-link">Scopri di più →</a>
-                </article>
-                <article class="service-card">
-                    <div class="service-icon">👨‍👩‍👧‍👦</div>
+                    <p>Feste, cerimonie ed eventi aziendali documentati con stile</p>
+                    <a href="services.html#eventi" class="service-link">Scopri di Più →</a>
+                </div>
+            </div>
+
+            <div class="service-card-modern" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-image" style="background-image: url('images/services/ritratti.jpg')">
+                    <div class="service-icon">📸</div>
+                </div>
+                <div class="service-card-content">
                     <h3>Ritratti</h3>
-                    <p>Ritratti artistici, foto famiglia e book fotografici personalizzati</p>
-                    <a href="services.html#ritratti" class="service-link">Scopri di più →</a>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Preview Section -->
-    <section class="about-preview section section-alt">
-        <div class="container">
-            <div class="about-preview-grid">
-                <div class="about-preview-image">
-                    <img src="images/about-preview.jpg" alt="Fotografo professionista Grottaglie al lavoro durante un matrimonio" loading="lazy">
+                    <p>Ritratti di famiglia, book fotografici e foto crescita bambini</p>
+                    <a href="landing/fotografo-crescita-grottaglie.html" class="service-link">Servizio Crescita →</a>
                 </div>
-                <div class="about-preview-content">
-                    <h2>Passione e Professionalità</h2>
-                    <p>Da oltre 10 anni trasformo momenti in ricordi indimenticabili. Ogni scatto racconta una storia unica, catturando emozioni autentiche con un approccio discreto e professionale.</p>
-                    <p>La mia missione è creare fotografie che non solo documentano, ma emozionano e resistono al tempo.</p>
-                    <a href="about.html" class="btn btn-outline">Scopri la Mia Storia</a>
+            </div>
+
+            <div class="service-card-modern" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-image" style="background-image: url('images/services/cerimonie.jpg')">
+                    <div class="service-icon">🙏</div>
+                </div>
+                <div class="service-card-content">
+                    <h3>Cerimonie</h3>
+                    <p>Comunioni, cresime e battesimi con approccio discreto</p>
+                    <a href="landing/fotografo-comunione-grottaglie.html" class="service-link">Offerta Comunioni →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Preview Section -->
-    <section class="portfolio-preview section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Portfolio Recenti</h2>
-                <p>I migliori scatti delle nostre ultime sessioni fotografiche</p>
-            </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <img src="images/portfolio-1.jpg" alt="Fotografia matrimonio elegante a Grottaglie" loading="lazy">
-                    <div class="portfolio-overlay">
-                        <span>Matrimonio</span>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="images/portfolio-2.jpg" alt="Ritratto famiglia professionale Grottaglie" loading="lazy">
-                    <div class="portfolio-overlay">
-                        <span>Famiglia</span>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="images/portfolio-3.jpg" alt="Evento aziendale fotografo Grottaglie" loading="lazy">
-                    <div class="portfolio-overlay">
-                        <span>Eventi</span>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="images/portfolio-4.jpg" alt="Ritratto artistico fotografo professionista" loading="lazy">
-                    <div class="portfolio-overlay">
-                        <span>Ritratti</span>
+    <!-- Testimonials Modern -->
+    <section class="testimonials-modern">
+        <div class="section-intro" data-aos="fade-up">
+            <span class="section-label">Recensioni</span>
+            <h2 class="section-title-modern">Dicono di Me</h2>
+        </div>
+
+        <div class="testimonials-slider">
+            <div class="testimonial-modern" data-aos="fade-up">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text-modern">"Foto meravigliose che rivivono ogni emozione del nostro matrimonio. Professionalità assoluta e risultati da copertina. Lo consigliamo a occhi chiusi!"</p>
+                <div class="testimonial-author-modern">
+                    <div class="author-image" style="background-image: url('images/testimonials/couple-1.jpg')"></div>
+                    <div class="author-info">
+                        <strong>Elena & Marco</strong>
+                        <span>Matrimonio 2024</span>
                     </div>
                 </div>
             </div>
-            <div class="text-center">
-                <a href="portfolio.html" class="btn btn-primary">Vedi Tutto il Portfolio</a>
-            </div>
-        </div>
-    </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials section section-alt">
-        <div class="container">
-            <div class="section-header">
-                <h2>Cosa Dicono di Noi</h2>
-                <p>La soddisfazione dei nostri clienti è la nostra migliore referenza</p>
-            </div>
-            <div class="testimonials-grid">
-                <article class="testimonial-card">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"Professionalità e passione in ogni scatto. Ha reso il nostro matrimonio ancora più magico. Consigliatissimo!"</p>
-                    <p class="testimonial-author">— Marco & Giulia, Matrimonio 2024</p>
-                </article>
-                <article class="testimonial-card">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"Foto meravigliose che rivivono ogni momento della comunione di nostro figlio. Un ricordo che conserveremo per sempre."</p>
-                    <p class="testimonial-author">— Famiglia Rossi, Comunione 2024</p>
-                </article>
-                <article class="testimonial-card">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"Un professionista vero, attento ai dettagli e sempre disponibile. Le foto del nostro evento sono spettacolari!"</p>
-                    <p class="testimonial-author">— Laura, Evento Aziendale 2024</p>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Pronto a Immortalare i Tuoi Momenti?</h2>
-                <p>Contattaci per un preventivo gratuito e senza impegno</p>
-                <a href="contact.html" class="btn btn-primary btn-large">Richiedi un Preventivo Gratuito</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h3>Studio Fotografico</h3>
-                    <p>Fotografo professionista a Grottaglie specializzato in matrimoni, eventi e ritratti d'autore.</p>
+            <div class="testimonial-modern" data-aos="fade-up" data-aos-delay="100">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text-modern">"Un vero artista! Ha catturato l'essenza della nostra famiglia in modo autentico. Le foto sono così belle che le abbiamo stampate tutte!"</p>
+                <div class="testimonial-author-modern">
+                    <div class="author-image" style="background-image: url('images/testimonials/family-1.jpg')"></div>
+                    <div class="author-info">
+                        <strong>Famiglia Rossi</strong>
+                        <span>Book Famiglia 2024</span>
+                    </div>
                 </div>
-                <div class="footer-col">
-                    <h3>Link Utili</h3>
+            </div>
+
+            <div class="testimonial-modern" data-aos="fade-up" data-aos-delay="200">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text-modern">"Consegna rapidissima e qualità incredibile. Ogni foto racconta una storia. Miglior fotografo di Grottaglie senza dubbio!"</p>
+                <div class="testimonial-author-modern">
+                    <div class="author-image" style="background-image: url('images/testimonials/event-1.jpg')"></div>
+                    <div class="author-info">
+                        <strong>Giulia</strong>
+                        <span>Festa 18 Anni 2024</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section con Background Image -->
+    <section class="cta-modern" style="background-image: url('images/cta-bg.jpg')">
+        <div class="cta-overlay"></div>
+        <div class="cta-content-modern" data-aos="zoom-in">
+            <h2>Pronto a Immortalare i Tuoi Momenti?</h2>
+            <p>Contattami per un preventivo gratuito e personalizzato</p>
+            <a href="contact.html" class="btn-modern btn-primary-modern btn-large">Richiedi Preventivo</a>
+        </div>
+    </section>
+
+    <!-- Instagram Feed Preview -->
+    <section class="instagram-section">
+        <div class="section-intro" data-aos="fade-up">
+            <span class="section-label">Instagram</span>
+            <h2 class="section-title-modern">Seguimi su Instagram</h2>
+            <a href="https://instagram.com/tuoaccount" target="_blank" class="instagram-handle">@studiofotografico</a>
+        </div>
+
+        <div class="instagram-grid">
+            <a href="#" class="insta-item" data-aos="fade-up">
+                <img src="images/instagram/1.jpg" alt="Instagram foto 1" loading="lazy">
+                <div class="insta-overlay">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </div>
+            </a>
+            <a href="#" class="insta-item" data-aos="fade-up" data-aos-delay="50">
+                <img src="images/instagram/2.jpg" alt="Instagram foto 2" loading="lazy">
+                <div class="insta-overlay">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </div>
+            </a>
+            <a href="#" class="insta-item" data-aos="fade-up" data-aos-delay="100">
+                <img src="images/instagram/3.jpg" alt="Instagram foto 3" loading="lazy">
+                <div class="insta-overlay">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </div>
+            </a>
+            <a href="#" class="insta-item" data-aos="fade-up" data-aos-delay="150">
+                <img src="images/instagram/4.jpg" alt="Instagram foto 4" loading="lazy">
+                <div class="insta-overlay">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </div>
+            </a>
+            <a href="#" class="insta-item" data-aos="fade-up" data-aos-delay="200">
+                <img src="images/instagram/5.jpg" alt="Instagram foto 5" loading="lazy">
+                <div class="insta-overlay">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </div>
+            </a>
+            <a href="#" class="insta-item" data-aos="fade-up" data-aos-delay="250">
+                <img src="images/instagram/6.jpg" alt="Instagram foto 6" loading="lazy">
+                <div class="insta-overlay">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer Minimal Modern -->
+    <footer class="footer-modern">
+        <div class="footer-content-modern">
+            <div class="footer-brand">
+                <h3>Studio Fotografico</h3>
+                <p>Grottaglie, Taranto</p>
+            </div>
+
+            <div class="footer-links-modern">
+                <div class="footer-col-modern">
+                    <h4>Navigazione</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">Chi Sono</a></li>
-                        <li><a href="services.html">Servizi</a></li>
                         <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Servizi</a></li>
                         <li><a href="contact.html">Contatti</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h3>Servizi Fotografici</h3>
+
+                <div class="footer-col-modern">
+                    <h4>Servizi</h4>
                     <ul>
-                        <li><a href="services.html#matrimoni">Matrimoni</a></li>
-                        <li><a href="services.html#comunioni">Comunioni</a></li>
-                        <li><a href="services.html#eventi">Eventi</a></li>
-                        <li><a href="services.html#ritratti">Ritratti</a></li>
+                        <li><a href="landing/fotografo-matrimonio-grottaglie.html">Matrimoni</a></li>
+                        <li><a href="landing/fotografo-comunione-grottaglie.html">Comunioni</a></li>
+                        <li><a href="landing/fotografo-crescita-grottaglie.html">Foto Crescita</a></li>
+                        <li><a href="landing/fotografo-18-anni-grottaglie.html">Feste 18 Anni</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h3>Contatti</h3>
-                    <address>
-                        <p><strong>Via Roma 123</strong><br>
-                        74023 Grottaglie (TA)<br>
-                        Italia</p>
-                        <p><strong>Tel:</strong> <a href="tel:+390991234567">+39 099 1234567</a><br>
-                        <strong>Email:</strong> <a href="mailto:info@studiofotografico.it">info@studiofotografico.it</a></p>
-                    </address>
+
+                <div class="footer-col-modern">
+                    <h4>Contatti</h4>
+                    <ul>
+                        <li><a href="tel:+390991234567">+39 099 1234567</a></li>
+                        <li><a href="mailto:info@studiofotografico.it">info@studiofotografico.it</a></li>
+                        <li>Via Roma 123<br>74023 Grottaglie (TA)</li>
+                    </ul>
+                </div>
+
+                <div class="footer-col-modern">
+                    <h4>Social</h4>
+                    <div class="social-links-modern">
+                        <a href="#" aria-label="Instagram"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                        <a href="#" aria-label="Facebook"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                    </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Studio Fotografico Grottaglie. Tutti i diritti riservati. | <a href="#">Privacy Policy</a></p>
-            </div>
+        </div>
+
+        <div class="footer-bottom-modern">
+            <p>&copy; 2024 Studio Fotografico Grottaglie. Tutti i diritti riservati.</p>
         </div>
     </footer>
+
+    <!-- AOS Library per animazioni scroll -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out',
+            once: true,
+            offset: 50
+        });
+    </script>
 
     <script src="js/main.js"></script>
 </body>
