@@ -392,9 +392,10 @@ p {
 }
 
 /* ==========================================
-   MODERN BUTTONS
+   MODERN BUTTONS (con supporto retrocompatibilità)
    ========================================== */
-.btn-modern {
+.btn-modern,
+.btn {
     display: inline-block;
     padding: 1rem 2.5rem;
     font-family: var(--font-sans);
@@ -406,14 +407,17 @@ p {
     cursor: pointer;
     transition: var(--transition-base);
     border-radius: 2px;
+    text-decoration: none;
 }
 
-.btn-primary-modern {
+.btn-primary-modern,
+.btn-primary {
     background: var(--accent-gold);
-    color: var(--primary-light);
+    color: var(--primary-light) !important;
 }
 
-.btn-primary-modern:hover {
+.btn-primary-modern:hover,
+.btn-primary:hover {
     background: var(--accent-dark);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(201, 169, 97, 0.3);
@@ -967,6 +971,100 @@ p {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     color: rgba(255, 255, 255, 0.5);
     font-size: 0.9rem;
+}
+
+/* ==========================================
+   CLASSI LEGACY PER PAGINE INTERNE
+   ========================================== */
+/* Sections */
+.section {
+    padding: 4rem 0;
+}
+
+.section-sm {
+    padding: 2rem 0;
+}
+
+/* Page Header */
+.page-header {
+    background: linear-gradient(135deg, var(--primary-dark), var(--accent-dark));
+    color: var(--primary-light);
+    padding: 6rem 2rem 4rem;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.page-header h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 1rem;
+    color: var(--primary-light);
+}
+
+.page-header p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    background: var(--bg-light);
+    padding: 1rem 0;
+    margin-top: 80px;
+}
+
+.breadcrumb ol {
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.breadcrumb li {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb li:not(:last-child)::after {
+    content: '›';
+    margin-left: 0.5rem;
+    color: var(--text-muted);
+}
+
+.breadcrumb a {
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+.breadcrumb a:hover {
+    color: var(--accent-gold);
+}
+
+.breadcrumb li[aria-current] {
+    color: var(--text-muted);
+}
+
+/* CTA Section */
+.cta-section {
+    background: linear-gradient(135deg, var(--accent-gold), var(--accent-dark));
+    color: var(--primary-light);
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.cta-content h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 1rem;
+    color: var(--primary-light);
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 /* ==========================================
