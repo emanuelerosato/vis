@@ -1,172 +1,162 @@
 /**
- * FOTOGRAFO GROTTAGLIE - MAIN.JS
- * Lightweight JavaScript for interactions
+ * FOTOGRAFO GROTTAGLIE - MODERN INTERACTIVE JS
  */
 
 // ====================================
-// MOBILE NAVIGATION TOGGLE
+// MOBILE NAVIGATION
 // ====================================
 document.addEventListener('DOMContentLoaded', function() {
-    const navToggle = document.getElementById('navToggle');
-    const navMenu = document.getElementById('navMenu');
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
 
-    if (navToggle && navMenu) {
-        navToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+
+            // Animate hamburger
+            const spans = menuToggle.querySelectorAll('span');
+            if (navLinks.classList.contains('active')) {
+                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+            } else {
+                spans[0].style.transform = '';
+                spans[1].style.opacity = '';
+                spans[2].style.transform = '';
+            }
         });
 
         // Close menu when clicking outside
         document.addEventListener('click', function(event) {
-            if (!navToggle.contains(event.target) && !navMenu.contains(event.target)) {
-                navMenu.classList.remove('active');
+            if (!menuToggle.contains(event.target) && !navLinks.contains(event.target)) {
+                navLinks.classList.remove('active');
+                const spans = menuToggle.querySelectorAll('span');
+                spans[0].style.transform = '';
+                spans[1].style.opacity = '';
+                spans[2].style.transform = '';
             }
         });
-    }
-});
 
-// ====================================
-// STICKY NAVBAR
-// ====================================
-window.addEventListener('scroll', function() {
-    const navbar = document.getElementById('navbar');
-    if (navbar) {
-        if (window.scrollY > 50) {
-            navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.15)';
-        } else {
-            navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-        }
-    }
-});
-
-// ====================================
-// PORTFOLIO FILTER
-// ====================================
-document.addEventListener('DOMContentLoaded', function() {
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const galleryItems = document.querySelectorAll('.gallery-item');
-
-    if (filterButtons.length > 0 && galleryItems.length > 0) {
-        filterButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                // Remove active class from all buttons
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                // Add active class to clicked button
-                this.classList.add('active');
-
-                const filterValue = this.getAttribute('data-filter');
-
-                galleryItems.forEach(item => {
-                    if (filterValue === 'all') {
-                        item.classList.remove('hidden');
-                        // Fade in animation
-                        item.style.animation = 'fadeInUp 0.5s ease';
-                    } else {
-                        const category = item.getAttribute('data-category');
-                        if (category === filterValue) {
-                            item.classList.remove('hidden');
-                            item.style.animation = 'fadeInUp 0.5s ease';
-                        } else {
-                            item.classList.add('hidden');
-                        }
-                    }
-                });
+        // Close menu when clicking a link
+        const links = navLinks.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+                const spans = menuToggle.querySelectorAll('span');
+                spans[0].style.transform = '';
+                spans[1].style.opacity = '';
+                spans[2].style.transform = '';
             });
         });
     }
 });
 
 // ====================================
-// LIGHTBOX FUNCTIONALITY
+// NAVBAR SCROLL EFFECT
+// ====================================
+window.addEventListener('scroll', function() {
+    const navbar = document.getElementById('navbar');
+    if (navbar) {
+        if (window.scrollY > 100) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    }
+});
+
+// ====================================
+// HERO FULLSCREEN SLIDER
 // ====================================
 document.addEventListener('DOMContentLoaded', function() {
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImage = document.getElementById('lightboxImage');
-    const lightboxTitle = document.getElementById('lightboxTitle');
-    const lightboxDesc = document.getElementById('lightboxDesc');
-    const lightboxClose = document.getElementById('lightboxClose');
-    const lightboxPrev = document.getElementById('lightboxPrev');
-    const lightboxNext = document.getElementById('lightboxNext');
-    const viewButtons = document.querySelectorAll('.gallery-view-btn');
+    const slides = document.querySelectorAll('.hero-slide');
+    const indicators = document.querySelectorAll('.indicator');
+    const prevBtn = document.getElementById('sliderPrev');
+    const nextBtn = document.getElementById('sliderNext');
 
-    let currentImageIndex = 0;
-    let images = [];
+    if (slides.length === 0) return;
 
-    // Collect all images
-    viewButtons.forEach((btn, index) => {
-        images.push({
-            src: btn.getAttribute('data-image'),
-            title: btn.getAttribute('data-title'),
-            desc: btn.getAttribute('data-desc')
+    let currentSlide = 0;
+    let slideInterval;
+
+    function showSlide(index) {
+        // Remove active class from all slides and indicators
+        slides.forEach(slide => slide.classList.remove('active'));
+        indicators.forEach(ind => ind.classList.remove('active'));
+
+        // Add active class to current slide and indicator
+        slides[index].classList.add('active');
+        if (indicators[index]) {
+            indicators[index].classList.add('active');
+        }
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    function startAutoSlide() {
+        slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+    }
+
+    function stopAutoSlide() {
+        clearInterval(slideInterval);
+    }
+
+    // Next button
+    if (nextBtn) {
+        nextBtn.addEventListener('click', function() {
+            stopAutoSlide();
+            nextSlide();
+            startAutoSlide();
         });
+    }
 
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            currentImageIndex = index;
-            openLightbox();
+    // Previous button
+    if (prevBtn) {
+        prevBtn.addEventListener('click', function() {
+            stopAutoSlide();
+            prevSlide();
+            startAutoSlide();
+        });
+    }
+
+    // Indicators
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', function() {
+            stopAutoSlide();
+            currentSlide = index;
+            showSlide(currentSlide);
+            startAutoSlide();
         });
     });
 
-    function openLightbox() {
-        if (lightbox && images.length > 0) {
-            const image = images[currentImageIndex];
-            lightboxImage.src = image.src;
-            lightboxImage.alt = image.title;
-            lightboxTitle.textContent = image.title;
-            lightboxDesc.textContent = image.desc;
-            lightbox.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-    }
+    // Start auto-slide
+    startAutoSlide();
 
-    function closeLightbox() {
-        if (lightbox) {
-            lightbox.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-    }
-
-    function showPrevImage() {
-        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-        openLightbox();
-    }
-
-    function showNextImage() {
-        currentImageIndex = (currentImageIndex + 1) % images.length;
-        openLightbox();
-    }
-
-    // Event listeners
-    if (lightboxClose) {
-        lightboxClose.addEventListener('click', closeLightbox);
-    }
-
-    if (lightboxPrev) {
-        lightboxPrev.addEventListener('click', showPrevImage);
-    }
-
-    if (lightboxNext) {
-        lightboxNext.addEventListener('click', showNextImage);
-    }
-
-    // Close on background click
-    if (lightbox) {
-        lightbox.addEventListener('click', function(e) {
-            if (e.target === lightbox) {
-                closeLightbox();
-            }
-        });
+    // Pause on hover
+    const heroSlider = document.getElementById('heroSlider');
+    if (heroSlider) {
+        heroSlider.addEventListener('mouseenter', stopAutoSlide);
+        heroSlider.addEventListener('mouseleave', startAutoSlide);
     }
 
     // Keyboard navigation
     document.addEventListener('keydown', function(e) {
-        if (lightbox && lightbox.classList.contains('active')) {
-            if (e.key === 'Escape') {
-                closeLightbox();
-            } else if (e.key === 'ArrowLeft') {
-                showPrevImage();
-            } else if (e.key === 'ArrowRight') {
-                showNextImage();
-            }
+        if (e.key === 'ArrowLeft') {
+            stopAutoSlide();
+            prevSlide();
+            startAutoSlide();
+        } else if (e.key === 'ArrowRight') {
+            stopAutoSlide();
+            nextSlide();
+            startAutoSlide();
         }
     });
 });
@@ -200,134 +190,224 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ====================================
-// FORM VALIDATION & ENHANCEMENT
+// PORTFOLIO FILTER (for portfolio page)
 // ====================================
 document.addEventListener('DOMContentLoaded', function() {
-    const contactForm = document.querySelector('form[name="contact"]');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
 
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            // Basic validation
-            const name = document.getElementById('name');
-            const email = document.getElementById('email');
-            const phone = document.getElementById('phone');
-            const message = document.getElementById('message');
-            const privacy = document.querySelector('input[name="privacy"]');
+    if (filterButtons.length > 0 && galleryItems.length > 0) {
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
 
+                const filterValue = this.getAttribute('data-filter');
+
+                galleryItems.forEach(item => {
+                    if (filterValue === 'all') {
+                        item.classList.remove('hidden');
+                        item.style.animation = 'fadeInUp 0.5s ease';
+                    } else {
+                        const category = item.getAttribute('data-category');
+                        if (category === filterValue) {
+                            item.classList.remove('hidden');
+                            item.style.animation = 'fadeInUp 0.5s ease';
+                        } else {
+                            item.classList.add('hidden');
+                        }
+                    }
+                });
+            });
+        });
+    }
+});
+
+// ====================================
+// LIGHTBOX FUNCTIONALITY (for portfolio page)
+// ====================================
+document.addEventListener('DOMContentLoaded', function() {
+    const lightbox = document.getElementById('lightbox');
+    if (!lightbox) return;
+
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxTitle = document.getElementById('lightboxTitle');
+    const lightboxDesc = document.getElementById('lightboxDesc');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const lightboxPrev = document.getElementById('lightboxPrev');
+    const lightboxNext = document.getElementById('lightboxNext');
+    const viewButtons = document.querySelectorAll('.gallery-view-btn');
+
+    let currentImageIndex = 0;
+    let images = [];
+
+    // Collect all images
+    viewButtons.forEach((btn, index) => {
+        images.push({
+            src: btn.getAttribute('data-image'),
+            title: btn.getAttribute('data-title'),
+            desc: btn.getAttribute('data-desc')
+        });
+
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            currentImageIndex = index;
+            openLightbox();
+        });
+    });
+
+    function openLightbox() {
+        if (images.length > 0) {
+            const image = images[currentImageIndex];
+            lightboxImage.src = image.src;
+            lightboxImage.alt = image.title;
+            lightboxTitle.textContent = image.title;
+            lightboxDesc.textContent = image.desc;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    function showPrevImage() {
+        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+        openLightbox();
+    }
+
+    function showNextImage() {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        openLightbox();
+    }
+
+    // Event listeners
+    if (lightboxClose) {
+        lightboxClose.addEventListener('click', closeLightbox);
+    }
+
+    if (lightboxPrev) {
+        lightboxPrev.addEventListener('click', showPrevImage);
+    }
+
+    if (lightboxNext) {
+        lightboxNext.addEventListener('click', showNextImage);
+    }
+
+    // Close on background click
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        if (lightbox.classList.contains('active')) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            } else if (e.key === 'ArrowLeft') {
+                showPrevImage();
+            } else if (e.key === 'ArrowRight') {
+                showNextImage();
+            }
+        }
+    });
+});
+
+// ====================================
+// FORM VALIDATION
+// ====================================
+document.addEventListener('DOMContentLoaded', function() {
+    const forms = document.querySelectorAll('form[data-netlify="true"]');
+
+    forms.forEach(form => {
+        form.addEventListener('submit', function(e) {
+            const requiredFields = form.querySelectorAll('[required]');
             let isValid = true;
             let errorMessage = '';
 
-            if (!name || name.value.trim() === '') {
-                isValid = false;
-                errorMessage += 'Il nome è obbligatorio.\n';
-            }
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    isValid = false;
+                    const fieldName = field.getAttribute('name') || field.getAttribute('id');
+                    errorMessage += `Il campo "${fieldName}" è obbligatorio.\n`;
+                }
 
-            if (!email || !isValidEmail(email.value)) {
-                isValid = false;
-                errorMessage += 'Inserisci un\'email valida.\n';
-            }
-
-            if (!phone || phone.value.trim() === '') {
-                isValid = false;
-                errorMessage += 'Il telefono è obbligatorio.\n';
-            }
-
-            if (!message || message.value.trim() === '') {
-                isValid = false;
-                errorMessage += 'Il messaggio è obbligatorio.\n';
-            }
-
-            if (!privacy || !privacy.checked) {
-                isValid = false;
-                errorMessage += 'Devi accettare la privacy policy.\n';
-            }
+                // Email validation
+                if (field.type === 'email' && field.value) {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(field.value)) {
+                        isValid = false;
+                        errorMessage += 'Inserisci un\'email valida.\n';
+                    }
+                }
+            });
 
             if (!isValid) {
                 e.preventDefault();
                 alert(errorMessage);
             }
         });
-    }
-
-    // Email validation helper
-    function isValidEmail(email) {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(email);
-    }
-});
-
-// ====================================
-// INTERSECTION OBSERVER FOR ANIMATIONS
-// ====================================
-document.addEventListener('DOMContentLoaded', function() {
-    const animatedElements = document.querySelectorAll('.service-card, .testimonial-card, .mission-card, .why-choose-item, .faq-item');
-
-    if ('IntersectionObserver' in window) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '0';
-                    entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        });
-
-        animatedElements.forEach(el => {
-            observer.observe(el);
-        });
-    }
+    });
 });
 
 // ====================================
 // LAZY LOADING ENHANCEMENT
 // ====================================
-document.addEventListener('DOMContentLoaded', function() {
-    if ('loading' in HTMLImageElement.prototype) {
-        // Browser supports native lazy loading
-        const images = document.querySelectorAll('img[loading="lazy"]');
-        images.forEach(img => {
-            img.src = img.src; // Trigger loading
-        });
-    } else {
-        // Fallback for browsers that don't support lazy loading
-        const script = document.createElement('script');
-        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
-        document.body.appendChild(script);
-    }
-});
+if ('loading' in HTMLImageElement.prototype) {
+    // Browser supports native lazy loading
+    const images = document.querySelectorAll('img[loading="lazy"]');
+    images.forEach(img => {
+        img.src = img.src; // Trigger loading
+    });
+} else {
+    // Fallback: Intersection Observer
+    document.addEventListener('DOMContentLoaded', function() {
+        const lazyImages = document.querySelectorAll('img[loading="lazy"]');
 
-// ====================================
-// PERFORMANCE: Preload critical resources
-// ====================================
-document.addEventListener('DOMContentLoaded', function() {
-    // Preload hero image if on homepage
-    const hero = document.querySelector('.hero');
-    if (hero) {
-        const bgImage = window.getComputedStyle(hero).backgroundImage;
-        if (bgImage && bgImage !== 'none') {
-            const imageUrl = bgImage.slice(5, -2); // Extract URL from url("...")
-            const link = document.createElement('link');
-            link.rel = 'preload';
-            link.as = 'image';
-            link.href = imageUrl;
-            document.head.appendChild(link);
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src || img.src;
+                        img.classList.add('loaded');
+                        observer.unobserve(img);
+                    }
+                });
+            });
+
+            lazyImages.forEach(img => imageObserver.observe(img));
+        } else {
+            // Fallback for browsers without IntersectionObserver
+            lazyImages.forEach(img => {
+                img.src = img.dataset.src || img.src;
+            });
         }
-    }
-});
+    });
+}
 
 // ====================================
-// NETLIFY FORMS: Success Message
+// PARALLAX EFFECT (simple)
 // ====================================
-document.addEventListener('DOMContentLoaded', function() {
-    // Check if we're on the thank you page (after form submission)
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('success') === 'true') {
-        alert('Grazie per averci contattato! Ti risponderemo entro 24 ore.');
-    }
+window.addEventListener('scroll', function() {
+    const parallaxSections = document.querySelectorAll('.about-parallax, .cta-modern');
+
+    parallaxSections.forEach(section => {
+        const scrolled = window.pageYOffset;
+        const coords = section.offsetTop;
+        const distance = scrolled - coords;
+
+        if (distance > -window.innerHeight && distance < section.offsetHeight) {
+            section.style.backgroundPositionY = distance * 0.5 + 'px';
+        }
+    });
 });
 
-console.log('Fotografo Grottaglie - Website loaded successfully');
+console.log('Fotografo Grottaglie - Modern website loaded successfully');
